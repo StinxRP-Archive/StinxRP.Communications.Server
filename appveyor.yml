@@ -22,3 +22,9 @@ build:
   project: StinxRP.Communications.Server.sln
   verbosity: minimal
   publish_nuget: true
+
+  deploy:
+  provider: NuGet
+  api_key:
+    secure: PJpwP8HoNUayJK5X5UefDDDdU4AXdW4GHZG9gU2i1MmXzkI8bUbrsqfeGhoL+qp3
+  artifact: /.*\.nupkg/
