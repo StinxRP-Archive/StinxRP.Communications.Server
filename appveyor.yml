@@ -23,7 +23,7 @@ after_build:
   # build -> publish_nuget: true does not work since SharpCaster.nuspec is not part of a project
   - ps: nuget pack .\StinxRP.Communications.Server.nuspec -Version $env:customNugetVersion
 
-+
+
 build:
   project: StinxRP.Communications.Server.sln
   verbosity: minimal  
