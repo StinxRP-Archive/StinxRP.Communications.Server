@@ -1,3 +1,4 @@
+
 version: 0.1.0.{build}
 
 image: Visual Studio 2019
@@ -23,8 +24,9 @@ build:
   verbosity: minimal
   publish_nuget: true
 
-  deploy:
+deploy:
   provider: NuGet
   api_key:
     secure: PJpwP8HoNUayJK5X5UefDDDdU4AXdW4GHZG9gU2i1MmXzkI8bUbrsqfeGhoL+qp3
+  skip_symbols: false
   artifact: /.*\.nupkg/
