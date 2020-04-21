@@ -19,10 +19,28 @@ before_build:
 - nuget update -self
 - nuget restore
 
+after_build:
+  # build -> publish_nuget: true does not work since SharpCaster.nuspec is not part of a project
+  - ps: nuget pack .\StinxRP.Communications.Server.nuspec -Version $env:customNugetVersion
+
++
 build:
   project: StinxRP.Communications.Server.sln
-  verbosity: minimal
-  publish_nuget: true
+  verbosity: minimal  
+  publish_nuget: true             # package projects with .nuspec files and push to artifacts
+  publish_nuget_symbols: true     # generate and publish NuGet symbol packages
+
+
+#---------------------------------#
+#      artifacts configuration    #
+#---------------------------------#
+
+artifacts:
+
+  # pushing all *.nupkg files in build directory recursively
+  - path: '**\StinxRP.Communications.Server*.nupkg'
+    name: Nuget
+
 
 deploy:
   provider: NuGet
@@ -30,3 +48,5 @@ deploy:
     secure: PJpwP8HoNUayJK5X5UefDDDdU4AXdW4GHZG9gU2i1MmXzkI8bUbrsqfeGhoL+qp3
   skip_symbols: false
   artifact: /.*\.nupkg/
+
+

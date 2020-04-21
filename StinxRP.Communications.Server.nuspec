@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>    
+    <id>StinxRP.Communication.Server</id>
+    <version>1.0.00</version>
+    <title>StinxRP Communication</title>
+    <authors>Muulfz, Marmota</authors>
+    <owners>StinxRP</owners>
+    <licenseUrl></licenseUrl>
+    <projectUrl></projectUrl>
+    <iconUrl></iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>StinxRP Communication</description>
+    <releaseNotes>Stinx </releaseNotes>
+    <copyright></copyright>
+    <tags></tags>
+    <dependencies>
+      <dependency id="JetBrains.Annotations" version="2020.1.0"  />
+    </dependencies>
+    <summary></summary>
+  </metadata>
+</package>
